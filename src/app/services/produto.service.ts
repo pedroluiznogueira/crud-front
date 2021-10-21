@@ -16,6 +16,16 @@ export class ProdutoService {
 
   listarProdutos(): Observable<Produto[]> {
     // realizar uma requisição get
-    return this.http.get<Produto[]>("http://localhost:8080/produto");
+    let obs: Observable<Produto[]> = this.http.get<Produto[]>("http://localhost:8080/produto");
+    
+    // fazer algo com o Observable
+    obs.subscribe(
+      // quero fazer isso com o conteúdo do observable
+      (resultado) => {
+        console.log(resultado);
+      }
+    );
+    
+    return obs;
   }
 }
