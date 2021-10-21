@@ -10,6 +10,11 @@ import { ProdutoService } from 'src/app/services/produto.service';
 })
 export class ProdutoComponent implements OnInit {
 
+
+  // atributos do produto à ser criado
+  nomeProduto?: string;
+
+  // lista vinda do get
   listaRecebida?: Produto[];
 
   // injetar o serviço aqui
@@ -31,6 +36,11 @@ export class ProdutoComponent implements OnInit {
       }
     );
     console.log(this.listaRecebida);
+  }
+
+  // enviar um produto para criar no banco
+  enviarProduto(): void {
+    console.log("enviar")
   }
 
 }

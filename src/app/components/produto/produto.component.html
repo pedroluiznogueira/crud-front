@@ -1,12 +1,14 @@
-<form action="">
+<form action="" (click)="enviarProduto()">
     <label for="">Nome do produto:</label>
-    <input type="text">
+    <input type="text" [(ngModel)]="nomeProduto">
 
     <label for="">Descrição do produto:</label>
     <input type="text">
 
     <label for="">Valor do produto:</label>
     <input type="text">
+
+    <button type="submit">Enviar</button>
 </form>
 
 <ul *ngFor="let produto of listaRecebida">
