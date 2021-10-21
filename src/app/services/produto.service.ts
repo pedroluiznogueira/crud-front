@@ -24,6 +24,7 @@ export class ProdutoService {
   constructor() { }
 
   listarProdutos(): Produto[] {
+    // despeja a lista
     return this.listaProdutos;
   }
 }
