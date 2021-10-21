@@ -16,6 +16,9 @@ export class ProdutoComponent implements OnInit {
   descricaoProduto?: string;
   valorProduto?: string;
 
+  // instanciando um novo produto
+  produto?: Produto = new Produto();
+
   // lista vinda do get
   listaRecebida?: Produto[];
 
@@ -37,23 +40,18 @@ export class ProdutoComponent implements OnInit {
         this.listaRecebida = listaResultado;
       }
     );
-    console.log(this.listaRecebida);
   }
 
   // enviar um produto para criar no banco
   enviarProduto(): void {
-    // instanciando um novo produto
-    let produto: Produto = new Produto();
-    console.log(produto);
 
     // fazendo o produto chegar aqui 
-    produto.nome = this.nomeProduto;
-    produto.descricao = this.descricaoProduto;
-    produto.valor = this.valorProduto;
-    console.log(produto);
+    this.produto!.nome = this.nomeProduto;
+    this.produto!.descricao = this.descricaoProduto;
+    this.produto!.valor = this.valorProduto;
 
     // levar esse produto que chegou aqui para o serviço
-    this.produtoService.receberProduto();
+    this.produtoService.receberProduto(this.produto!);
   }
 
 }

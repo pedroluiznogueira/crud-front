@@ -28,7 +28,12 @@ export class ProdutoService {
     return obs;
   }
 
-  receberProduto(): void {
-    console.log("recebendo produto...")
+  receberProduto(produto: Produto): void {
+    console.log(produto)
+    this.http.post<Produto>("http://localhost:8080/produto/criar", produto).subscribe(
+      (resultado) => {
+        console.log("Este produto foi enviado: " + resultado);
+      }
+    );
   }
 }
