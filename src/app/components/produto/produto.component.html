@@ -1,12 +1,12 @@
-<form action="" (click)="enviarProduto()">
+<form action="" (submit)="enviarProduto()">
     <label for="">Nome do produto:</label>
-    <input type="text" [(ngModel)]="nomeProduto">
+    <input type="text" name="nomeProduto" [(ngModel)]="nomeProduto">
 
     <label for="">Descrição do produto:</label>
-    <input type="text">
+    <input type="text" name="descricaoProduto" [(ngModel)]="descricaoProduto">
 
     <label for="">Valor do produto:</label>
-    <input type="text">
+    <input type="text" name="valorProduto" [(ngModel)]="valorProduto">
 
     <button type="submit">Enviar</button>
 </form>

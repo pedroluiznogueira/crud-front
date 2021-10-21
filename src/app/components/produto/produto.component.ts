@@ -13,6 +13,8 @@ export class ProdutoComponent implements OnInit {
 
   // atributos do produto à ser criado
   nomeProduto?: string;
+  descricaoProduto?: string;
+  valorProduto?: string;
 
   // lista vinda do get
   listaRecebida?: Produto[];
@@ -40,7 +42,14 @@ export class ProdutoComponent implements OnInit {
 
   // enviar um produto para criar no banco
   enviarProduto(): void {
-    console.log("enviar")
+    let produto: Produto = new Produto();
+    console.log(produto);
+
+    produto.nome = this.nomeProduto;
+    produto.descricao = this.descricaoProduto;
+    produto.valor = this.valorProduto;
+
+    console.log(produto);
   }
 
 }
