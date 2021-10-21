@@ -6,25 +6,11 @@ import { Produto } from '../models/Produto';
 })
 export class ProdutoService {
 
-  listaProdutos: Produto[] = [
-    {
-      id : 1,
-      nome : "iphone",
-      descricao: "celular caro",
-      valor : "100"
-    }, 
-    {
-      id : 2,
-      nome : "ipad",
-      descricao: "tablet caro",
-      valor : "200"
-    }
-  ];
+  listaProdutos: Produto[] = [];
 
   constructor() { }
 
-  listarProdutos(): Produto[] {
-    // despeja a lista
-    return this.listaProdutos;
+  listarProdutos() {
+    // realizar uma requisição get
   }
 }

@@ -23,7 +23,7 @@ export class ProdutoComponent implements OnInit {
   // fazer com que a lista chegue aqui
   receberListaProdutos(): void {
     // armazenar a lista vinda do serviço
-    this.listaRecebida = this.produtoService.listarProdutos();
+    
     console.log(this.listaRecebida);
   }
 
