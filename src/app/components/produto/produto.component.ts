@@ -10,7 +10,7 @@ import { ProdutoService } from 'src/app/services/produto.service';
 })
 export class ProdutoComponent implements OnInit {
 
-  listaRecebida?: Observable<Produto[]>;
+  listaRecebida?: Produto[];
 
   // injetar o serviço aqui
   constructor(
@@ -24,7 +24,12 @@ export class ProdutoComponent implements OnInit {
   // fazer com que a lista chegue aqui
   receberListaProdutos(): void {
     // armazenar a lista vinda do serviço
-    this.listaRecebida = this.produtoService.listarProdutos();
+    this.produtoService.listarProdutos().subscribe(
+      // tenho acesso ao conteúdo dentro do Observable
+      (listaResultado) => {
+        this.listaRecebida = listaResultado;
+      }
+    );
     console.log(this.listaRecebida);
   }
 

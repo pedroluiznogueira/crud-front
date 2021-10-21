@@ -21,9 +21,8 @@ export class ProdutoService {
     // fazer algo com o Observable
     obs.subscribe(
       // quero fazer isso com o conteúdo do observable
-      (resultado) => {
-        console.log(resultado);
-      }
+      // o conteúdo do observable só está disponível dentro do escopo de subscribe
+      (resultado) => {}
     );
     
     return obs;
