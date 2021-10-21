@@ -27,4 +27,8 @@ export class ProdutoService {
     
     return obs;
   }
+
+  receberProduto(): void {
+    console.log("recebendo produto...")
+  }
 }

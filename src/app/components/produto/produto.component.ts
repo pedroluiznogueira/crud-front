@@ -42,14 +42,18 @@ export class ProdutoComponent implements OnInit {
 
   // enviar um produto para criar no banco
   enviarProduto(): void {
+    // instanciando um novo produto
     let produto: Produto = new Produto();
     console.log(produto);
 
+    // fazendo o produto chegar aqui 
     produto.nome = this.nomeProduto;
     produto.descricao = this.descricaoProduto;
     produto.valor = this.valorProduto;
-
     console.log(produto);
+
+    // levar esse produto que chegou aqui para o serviço
+    this.produtoService.receberProduto();
   }
 
 }
