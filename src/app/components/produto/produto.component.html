@@ -9,8 +9,8 @@
     <input type="text">
 </form>
 
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
+<ul *ngFor="let produto of listaRecebida">
+    <li>{{produto.nome}}</li>
+    <li>{{produto.descricao}}</li>
+    <li>{{produto.valor}}</li>
 </ul>
