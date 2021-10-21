@@ -9,6 +9,8 @@ import { ProdutoService } from 'src/app/services/produto.service';
 })
 export class ProdutoComponent implements OnInit {
 
+  listaRecebida?: Produto[];
+
   // injetar o serviço aqui
   constructor(
     private produtoService: ProdutoService
@@ -21,7 +23,8 @@ export class ProdutoComponent implements OnInit {
   // fazer com que a lista chegue aqui
   receberListaProdutos(): void {
     // armazenar a lista vinda do serviço
-    let listaProdutos = this.produtoService.listarProdutos();
+    this.listaRecebida = this.produtoService.listarProdutos();
+    console.log(this.listaRecebida);
   }
 
 }
